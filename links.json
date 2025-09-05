@@ -282,6 +282,10 @@
           "description": "AI tool for playing and analyzing chess games"
         }
       ]
+    },
+    {
+      "title": "Feedback & rating system",
+      "description":"Star rating with user feedback option"
     }
   ]
 }
