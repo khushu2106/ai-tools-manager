@@ -284,8 +284,15 @@
       ]
     },
     {
-      "title": "Feedback & rating system",
+      "name":"Feedback & Rating System",
+      "icon":"\u2605",
+      "links":[
+        {
+      "title": "Feedback & Rating system",
+      "url":"",
       "description":"Star rating with user feedback option"
+        }
+      ]
     }
   ]
 }

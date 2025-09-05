@@ -317,18 +317,16 @@ function HighlightFeedbackStars(count){
 function submitFeedback(){
   const comment = document.getElementById("feedback-comment").value;
   if (feedbackStars === 0 ){
-    alert("Please select a star reating ! ");
+    alert("Please select a star rating ! ");
     return;
   }
+    feedback.push({stars:feedbackStars,comment});
+    saveFeedback()
+    displayFeedbak()
+    feedbackStars = 0;
+    HighlightFeedbackStars(0);
+    document.getElementById("feedback-comment").value = "";
 }
-
-feedback.push({stars:feedbackStars,comment});
-saveFeedback()
-displayFeedbak()
-feedbackStars = 0;
-HighlightFeedbackStars(0);
-document.getElementById("feedback-comment").value = "";
-
 function displayFeedbak(){
   const list = document.getElementById("feedback-list");
   list.innerHTML = "<h3> User Feedback : </h3>";
@@ -345,7 +343,7 @@ function saveFeedback(){
 }
 
 function loadFeedback(){
-  const saved = localStorage.getItem("feedback");
+  const saved = localStorage.getItem("feedbacks");
   if (saved){
     feedback.push(...JSON.parse(saved));
     displayFeedbak();
