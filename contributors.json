@@ -85,8 +85,10 @@
         "name": "Gupta Khushbu",
         "github": "khushu2106",
         "avatar": "https://avatars.githubusercontent.com/khushu2106",
+        "linkedin":"Khushbu Gupta",
+        "tagline":"Software Developer",
         "contributions": [
-          "Implemented a star-based rating system with text feedback option ",
+          "Implemented a rating system with text feedback option ",
           "Added feedback section with live star highlight effect"
         ],
         "role" : "Contributor"

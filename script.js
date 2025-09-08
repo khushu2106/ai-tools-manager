@@ -285,7 +285,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 let feedbackStars = 0;
-const feedback = []
 
 window.addEventListener("load",()=>{
   const ratingDiv = document.getElementById("feedback-stars");
@@ -299,7 +298,7 @@ window.addEventListener("load",()=>{
     });
     ratingDiv.appendChild(star);
   }
-  loadFeedback();
+   loadFeedback();
 });
 
 function HighlightFeedbackStars(count){
@@ -311,7 +310,7 @@ function HighlightFeedbackStars(count){
     else{
       stars.classList.remove("active")
     }
-  })
+  });
 }
 
 function submitFeedback(){
@@ -320,32 +319,66 @@ function submitFeedback(){
     alert("Please select a star rating ! ");
     return;
   }
-    feedback.push({stars:feedbackStars,comment});
-    saveFeedback()
-    displayFeedbak()
+    saveFeedback(feedbackStars,comment)
     feedbackStars = 0;
     HighlightFeedbackStars(0);
     document.getElementById("feedback-comment").value = "";
 }
-function displayFeedbak(){
-  const list = document.getElementById("feedback-list");
-  list.innerHTML = "<h3> User Feedback : </h3>";
-}
 
-feedback.forEach(fb => {
-  const fbEl = document.createElement("div")
-  fbEl.innerHTML = "<strong>$ {"*".repeat(fb.stars)}</strong> -$ {fb.comment}";
-  list.appendChild(fbEl); 
-});
-
-function saveFeedback(){
-  localStorage.setItem("feedbacks",JSON.stringify(feedback));
+function saveFeedback(stars,comment){
+  fetch("http://localhost:5000/api/feedback",{
+   method : "POST",
+   headers : {"content-Type":"application/json"},
+   body : JSON.stringify({
+    tool : "GitHubCopilot",
+    stars,
+    comment
+   })
+  })
+    .then(res => {
+      if(!res.ok){
+        throw new Error("Network response was not ok ");
+      }
+      return res.json();
+    })
+    .then(data =>{
+      console.log("Feedback Saved : ",data);
+      loadFeedback();
+    })
+    .catch(err =>
+      console.error("Error saving feedback : ",err));
 }
 
 function loadFeedback(){
-  const saved = localStorage.getItem("feedbacks");
-  if (saved){
-    feedback.push(...JSON.parse(saved));
-    displayFeedbak();
+  fetch("http://localhost:5000/feedback/GitHubCopilot")
+  .then(res => {
+    if(!res.ok){
+      throw new Error("Network response was not ok ")
+    }
+    return res.json();
+  })
+  .then(data => {
+    // console.log("Feedback fetched : ",data)
+    displayFeedback(data);
+  })
+  .catch(err => 
+    console.error("Error loading feedback : ",err)
+  );
+}
+
+ function displayFeedback(feedbackData){
+   const list = document.getElementById("feedback-list");
+   list.innerHTML = "<h3> User Reviews : </h3>";
+   if (feedbackData.length === 0 || !feedbackData){
+       const noFeedback = document.createElement("P");
+       noFeedback.textContent = "No feedback yet . ";
+       list.appendChild(noFeedback);
+       return;
   }
+   feedbackData.forEach(fb => {
+      const fbEl = document.createElement("div")
+      fbEl.innerHTML = `${"Rating : "} - <strong>${"\u2605 ".repeat(fb.stars || 0)}</strong> - ${fb.comment || "No comment "} `; 
+      fbEl.querySelectorAll("strong").forEach(e1 => e1.style.color = "gold");
+      list.appendChild(fbEl); 
+  });
 }
