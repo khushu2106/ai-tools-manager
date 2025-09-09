@@ -54,9 +54,8 @@ app.post("/api/feedback", async (req, res) => {
 // GET all feedback for a tool
 app.get("/feedback/:tool", async (req, res) => {
   try {
-    let limit = parseInt(req.query.limit) || 7;
     const tool = req.params.tool;
-    const feedbacks = await Feedback.find({ tool }).sort({ createdAt: -1 }).limit(limit);
+    const feedbacks = await Feedback.find({ tool }).sort({ createdAt: -1 }).limit(7);
     res.json(feedbacks);
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
