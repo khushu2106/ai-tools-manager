@@ -43,7 +43,12 @@
           "title": "Elicit",
           "url": "https://elicit.com/",
           "description": "AI-powered research assistant"
-        }      
+        },
+        {
+          "title": "www.copy.ai",
+          "url": "https://www.copy.ai/tools",
+          "description": "Free AI Writing Generators"
+        }    
       ]
     },
     {
@@ -171,6 +176,16 @@
           "title": "Blackbox",
           "url": "https://blackbox.ai/",
           "description": "Free code search & snippet extraction"
+        },
+        {
+          "title": "CodiumAI",
+          "url": "https://codium.ai/",
+          "description": "AI-powered code review and test generation"
+        },
+        {
+          "title": "V0 by Vercel",
+          "url": "https://v0.dev/",
+          "description": "Build full-stack apps with AI assistance"
         }
       ]
     },
@@ -212,6 +227,11 @@
           "title": "Leonardo AI",
           "url": "https://leonardo.ai/",
           "description": "AI art and image generation platform"
+        },
+        {
+          "title": "Vmaker AI/",
+          "url": "https://www.vmaker.com/",
+          "description": "The fastest way to generate videos from text, voice, or documents and edit them to perfection with AI."
         }
       ]
     },

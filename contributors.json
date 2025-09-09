@@ -61,9 +61,7 @@
       "linkedin": "dipanshurdev",
       "website": "https://dipanshurdev.netlify.app",
       "tagline": "I write code",
-      "contributions": [
-        "Added new AI Tool 'Banani.co' for Designers"
-      ],
+      "contributions": ["Added new AI Tool 'Banani.co' for Designers"],
       "role": "Contributor"
     },
     {
@@ -92,6 +90,28 @@
           "Added feedback section with live star highlight effect"
         ],
         "role" : "Contributor"
+    },
+      "name": "B Sai Mahendra",
+      "github": "saimahendra282",
+      "avatar": "https://avatars.githubusercontent.com/u/118994059?v=4",
+      "linkedin": "bejawada-sai-mahendra-b18289212",
+      "tagline": "Studying dual degree at klef",
+      "contributions": [
+        "Added New Feature - Searching and filtering functionality"
+      ],
+      "website": "https://bejawadasaimahendra.vercel.app",
+      "role": "Contributor"
+    },
+    {
+      "name": "Siddarthan N",
+      "github": "Siddarthan999",
+      "avatar": "https://avatars.githubusercontent.com/u/91734840?v=4", 
+      "linkedin": "siddarthan-n-118635224",
+      "tagline": "Software Engineer",
+      "contributions": [
+        "Added CodiumAI and V0 by Vercel under AI Coding & Development"
+      ],
+      "role": "Contributor"
     }
   ]
 }
