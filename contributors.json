@@ -105,11 +105,22 @@
     {
       "name": "Siddarthan N",
       "github": "Siddarthan999",
-      "avatar": "https://avatars.githubusercontent.com/u/91734840?v=4", 
+      "avatar": "https://avatars.githubusercontent.com/u/91734840?v=4",
       "linkedin": "siddarthan-n-118635224",
       "tagline": "Software Engineer",
       "contributions": [
         "Added CodiumAI and V0 by Vercel under AI Coding & Development"
+      ],
+      "role": "Contributor"
+    },
+    {
+      "name": "Manjunath L",
+      "github": "Manjunath-L",
+      "avatar": "https://github.com/Manjunath-L.png",
+      "linkedin": "manjunath-l-web",
+      "tagline": "Aspiring Software Engineer & Open Source Contributor",
+      "contributions": [
+        "Added Local LLM tools category to AI Tools Collection"
       ],
       "role": "Contributor"
     }
