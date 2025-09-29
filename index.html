@@ -53,58 +53,6 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="mobile-web-app-capable" content="yes" />
 
-  <!-- for feedback section css -->
-  <style>
-    .feedbackSection {
-      margin-top: 40px;
-      padding: 20px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-
-    .feedbackSection h2 {
-      margin-bottom: 10px;
-    }
-
-    .feedbackSection textarea {
-      width: 100%;
-      margin-top: 10px;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-      resize: none;
-    }
-
-    #button {
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .feedbackSection button:hover {
-      background: #0056b3;
-    }
-
-    .feedbackSection .rating span{
-      font-size: 2rem;
-      cursor: pointer;
-      color: #ccc;
-      transition: color 0.2s;
-    }
-    .feedbackSection .rating span.active{
-      color: gold;
-    }
-    #feedback-list {
-      margin-top: 20px;
-      text-align: left;
-    }
-  </style>
   <!-- Favicon and Icons -->
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
@@ -260,11 +208,17 @@
           <a href="#feedback" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Feedback</a>
 
         </div>
-
+        <!-- Login & signup button -->
+        <a href="signup_login.html" target="_blank">
+          <button
+            class="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors flex items-center space-x-2 m-1">
+            Sign up/login
+          </button>
+        </a>
         <!-- GitHub Button -->
         <div class="flex items-center space-x-4">
           <a href="https://github.com/ArshdeepGrover/ai-tools-manager" target="_blank"
-            class="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors flex items-center space-x-2">
+            class="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors flex items-center space-x-2 m-1">
             <i class="fab fa-github"></i>
             <span class="hidden sm:inline">Star on GitHub</span>
           </a>
@@ -283,7 +237,6 @@
           <a href="#categories" class="text-gray-700 hover:text-blue-600 font-medium py-2">Categories</a>
           <a href="#contributors" class="text-gray-700 hover:text-blue-600 font-medium py-2">Contributors</a>
           <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium py-2">About</a>
-          <a href="#feedback" class="text-gray-700 hover:text-blue-600 font-medium py-2">Feedback</a>
         </div>
       </div>
     </div>
@@ -501,15 +454,6 @@
       </div>
     </div>
   </section>
-  <section id="feedback" class="feedbackSection">
-    <h2>Feedback</h2>
-    <p>Share your thoughts and help us to Improve AI Tools Hub </p>
-    <div class="rating" id="feedback-stars"></div>
-    <textarea id='feedback-comment' placeholder="Write your feedback ... "></textarea>
-    <button onclick="submitFeedback()" id="button">Submit</button>
-    <div id="feedback-list">
-    </div>
-  </section>
   <!-- Footer -->
   <footer class="bg-gray-900 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -552,9 +496,6 @@
             <li>
               <a href="#about" class="hover:text-white transition-colors">About</a>
             </li>
-            <li>
-              <a href="#feedback" class="hover:text-white transition-colors">Feedback</a>
-            </li>
           </ul>
         </div>
 
@@ -581,8 +522,8 @@
       </div>
     </div>
   </footer>
-
   <script src="script.js"></script>
+  <script type="module" src="firebase_auth.js" defer></script>
 </body>
 
 </html>

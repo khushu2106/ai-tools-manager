@@ -88,8 +88,7 @@
         "linkedin":"Khushbu Gupta",
         "tagline":"Software Developer",
         "contributions": [
-          "Implemented a rating system with text feedback option ",
-          "Added feedback section with live star highlight effect"
+          "Added signUp and login "
         ],
         "role" : "Contributor"
     }
