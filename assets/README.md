@@ -1,13 +1,13 @@
 # Assets Directory
 
-This directory contains all the visual assets for the AI Tools Hub website.
+This directory contains all the visual assets for the AI Tools Collection website.
 
 ## Files Included
 
 ### Images
 
 - `og-image.svg` - Open Graph image for social media sharing (1200x630)
-- `favicon.svg` - Main favicon in SVG format (32x32)
+- `favicon.svg` - Main favicon in SVG format (scalable vector)
 
 ### Required Favicon Files (to be generated)
 
@@ -70,7 +70,15 @@ The `og-image.svg` is optimized for:
 
 ## Usage Guidelines
 
-1. **Favicon**: Use favicon.svg as the primary favicon with PNG fallbacks
-2. **Social Sharing**: og-image.svg will be used automatically when sharing links
-3. **PWA**: The manifest.json references these icons for app installation
-4. **Branding**: Maintain the blue-purple gradient theme across all assets
+1. **Favicon**: Use favicon.svg as the primary favicon with PNG fallbacks for older browsers
+2. **Social Sharing**: og-image.svg is automatically used when sharing links on social platforms
+3. **PWA**: The manifest.json references these icons for progressive web app installation
+4. **Branding**: Maintain the blue-purple gradient theme across all assets for consistency
+5. **Performance**: SVG format ensures crisp display at all screen resolutions and sizes
+
+## Asset Optimization
+
+- All SVG files are optimized for web delivery
+- Images use efficient compression without quality loss
+- Assets are designed to work across all modern browsers and devices
+- Color schemes follow accessibility guidelines for contrast ratios

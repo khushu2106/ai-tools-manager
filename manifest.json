@@ -1,7 +1,7 @@
 {
   "name": "AI Tools Hub - Professional AI Tools Directory",
   "short_name": "AI Tools Hub",
-  "description": "Discover 28+ best free AI tools for professionals. Curated collection of AI tools for writing, design, coding, and productivity.",
+  "description": "Discover 100+ best free AI tools for professionals. Curated collection of AI tools for writing, design, coding, and productivity.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -12,38 +12,16 @@
   "dir": "ltr",
   "icons": [
     {
-      "src": "/assets/favicon-16x16.png",
-      "sizes": "16x16",
-      "type": "image/png"
-    },
-    {
-      "src": "/assets/favicon-32x32.png",
-      "sizes": "32x32",
-      "type": "image/png"
-    },
-    {
-      "src": "/assets/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png"
-    },
-    {
-      "src": "/assets/android-chrome-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/assets/android-chrome-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
     }
   ],
   "screenshots": [
     {
-      "src": "/assets/og-image.svg",
+      "src": "/assets/og-image.png",
       "sizes": "1200x630",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "label": "AI Tools Hub Homepage"
     }
   ],
@@ -55,8 +33,8 @@
       "url": "/#tools",
       "icons": [
         {
-          "src": "/assets/favicon-32x32.png",
-          "sizes": "32x32"
+          "src": "/assets/favicon.svg",
+          "sizes": "any"
         }
       ]
     },
@@ -67,8 +45,8 @@
       "url": "/#categories",
       "icons": [
         {
-          "src": "/assets/favicon-32x32.png",
-          "sizes": "32x32"
+          "src": "/assets/favicon.svg",
+          "sizes": "any"
         }
       ]
     },
@@ -76,11 +54,11 @@
       "name": "Contribute",
       "short_name": "Contribute",
       "description": "Add new AI tools",
-      "url": "https://github.com/ArshdeepGrover/ai-tools-collection",
+      "url": "https://github.com/ArshdeepGrover/ai-tools-manager",
       "icons": [
         {
-          "src": "/assets/favicon-32x32.png",
-          "sizes": "32x32"
+          "src": "/assets/favicon.svg",
+          "sizes": "any"
         }
       ]
     },

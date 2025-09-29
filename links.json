@@ -21,7 +21,7 @@
         },
         {
           "title": "Notion AI",
-          "url": "https://notion.so",
+          "url": "https://notion.so/product/ai",
           "description": "AI-powered workspace with free trial"
         },
         {
@@ -45,9 +45,19 @@
           "description": "AI-powered research assistant"
         },
         {
-          "title": "www.copy.ai",
+          "title": "Copy.ai",
           "url": "https://www.copy.ai/tools",
           "description": "Free AI Writing Generators"
+        },
+        {
+          "title": "Askify",
+          "url": "https://askify.video/",
+          "description": "AI-powered Q&A and knowledge base assistant"
+        },
+        {
+          "title": "Rytr",
+          "url": "https://rytr.me/",
+          "description": "AI-powered writing assistant for blogs, emails & ads."
         }
       ]
     },
@@ -104,6 +114,11 @@
           "title": "Pixlr",
           "url": "https://pixlr.com/",
           "description": "Edit photos, generate images, and design freely with Pixlr’s powerful AI tools."
+        },
+        {
+          "title": "Stitch",
+          "url": "https://stitch.withgoogle.com",
+          "description": "AI-powered UI/UX design tool for creating intuitive interfaces"
         }
       ]
     },
@@ -165,7 +180,7 @@
         {
           "title": "Amazon Q Developer",
           "url": "https://aws.amazon.com/q/developer/",
-          "description": "The most capable generative AI–powered assistant for software development"
+          "description": "Generative AI-powered assistant for software development"
         },
         {
           "title": "Bolt.new",
@@ -175,7 +190,12 @@
         {
           "title": "Blackbox",
           "url": "https://blackbox.ai/",
-          "description": "Free code search & snippet extraction"
+          "description": "Free code search & snippet extraction."
+        },
+        {
+          "title": "Deepseek",
+          "url": "https://www.deepseek.com/en",
+          "description": "Free AI for code generation."
         },
         {
           "title": "CodiumAI",
@@ -186,7 +206,48 @@
           "title": "V0 by Vercel",
           "url": "https://v0.dev/",
           "description": "Build full-stack apps with AI assistance"
+        },
+        {
+          "title": "Firebase Studio",
+          "url": "https://firebase.studio/",
+          "description": "AI-powered full-stack development environment for building and managing apps"
+        },
+        {
+          "title": "Kiro",
+          "url": "https://kiro.dev/",
+          "description": "AI IDE for prototype-to-production, spec-driven development"
+        },
+        {
+          "title": "Lovable",
+          "url": "https://lovable.dev/",
+          "description": "Build apps and websites by chatting with AI"
+        },
+        {
+          "title": "CodeRabbit",
+          "url": "https://coderabbit.ai/",
+          "description": "AI code reviews and suggestions directly in your editor"
+        },
+        {
+          "title": "Trae",
+          "url": "https://www.trae.ai/",
+          "description": "AI engineer that helps build software solutions independently"
+        },
+        {
+          "title": "Chef by Convex",
+          "url": "https://chef.convex.dev/",
+          "description": "Generate real-time full-stack apps with backend support"
+        },
+        {
+          "title": "Cursor AI IDE",
+          "url": "https://cursor.sh",
+          "description": "AI-first code editor with free features for real-time coding assistance"
+        },
+        {
+          "title": "Aider",
+          "url": "https://aider.chat/",
+          "description": "AI pair programming in your terminal"
         }
+
       ]
     },
     {
@@ -229,9 +290,19 @@
           "description": "AI art and image generation platform"
         },
         {
-          "title": "Vmaker AI/",
+          "title": "Vmaker AI",
           "url": "https://www.vmaker.com/",
-          "description": "The fastest way to generate videos from text, voice, or documents and edit them to perfection with AI."
+          "description": "Generate videos from text, voice, or docs and edit with AI"
+        },
+        {
+          "title": "Flow",
+          "url": "https://labs.google/flow",
+          "description": "AI platform for editing and producing video content"
+        },
+        {
+          "title": "Kapwing",
+          "url": "https://www.kapwing.com/",
+          "description": "AI-powered free video editor for creators"
         }
       ]
     },
@@ -278,6 +349,47 @@
           "title": "Taskade",
           "url": "https://taskade.com/",
           "description": "AI to-do lists, outlines, and workflows"
+        },
+        {
+          "title": "Tango",
+          "url": "https://tango.us/",
+          "description": "Create step-by-step guides and automate workflows with AI"
+        },
+        {
+          "title": "Iorad",
+          "url": "https://www.iorad.com/",
+          "description": "Interactive tutorials and workflow documentation made easy"
+        },
+        {
+          "title": "Snipo",
+          "url": "https://snipo.io/",
+          "description": "Productivity enhancement for Notion with snippets and AI suggestions"
+        },
+        {
+          "title": "Grok",
+          "url": "https://grok.x.ai/",
+          "description": "AI assistant for research, summarization, and productivity enhancement"
+        },
+        {
+          "title": "Leiga AI SMART Tools",
+          "url": "https://www.leiga.com/free-tools",
+          "description": "100% free AI tools for tasks like SMART goals, to-do lists, and prompts"
+        },
+        {
+          "title": "ChatPDF",
+          "url": "https://www.chatpdf.com/",
+          "description": "Chat with and summarize PDFs instantly."
+        }
+      ]
+    },
+    {
+      "name": "AI Entertainment",
+      "icon": "😂",
+      "links": [
+        {
+          "title": "Super Meme",
+          "url": "https://supermeme.ai/",
+          "description": "Quickly create memes using AI-generated content"
         }
       ]
     },
@@ -289,6 +401,11 @@
           "title": "Google AI Studio",
           "url": "https://aistudio.google.com",
           "description": "Web-based IDE for prototyping with Gemini AI models"
+        },
+        {
+          "title": "Hugging Face Spaces",
+          "url": "https://huggingface.co/spaces",
+          "description": "AI Model Prototyping"
         }
       ]
     },

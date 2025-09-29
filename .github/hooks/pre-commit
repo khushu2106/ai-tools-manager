@@ -1,0 +1,53 @@
+#!/bin/sh
+# Pre-commit hook to validate data files (production branch only)
+
+# Get current branch name
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+echo "🔍 Current branch: $BRANCH"
+
+# Only run validation on production branch
+if [ "$BRANCH" != "production" ]; then
+    echo "📄 Not on production branch, skipping data validation."
+    echo "🚀 Pre-commit checks passed!"
+    exit 0
+fi
+
+echo "🔍 Production branch detected - running data validation..."
+
+# Check if links.json has been modified
+if git diff --cached --name-only | grep -q "links.json"; then
+    echo "📝 links.json modified, checking for duplicates..."
+    
+    # Run the duplicate check
+    if node validate-links.js --duplicates-only; then
+        echo "✅ No duplicate links found!"
+    else
+        echo "❌ Duplicate links found!"
+        echo "Please remove duplicates and try again."
+        echo "Run 'node validate-links.js --duplicates-only' to see details."
+        exit 1
+    fi
+fi
+
+# Check if contributors.json has been modified
+if git diff --cached --name-only | grep -q "contributors.json"; then
+    echo "👥 contributors.json modified, validating contributor data..."
+    
+    # Run the contributors validation
+    if node validate-contributors.js --quick; then
+        echo "✅ Contributors data is valid!"
+    else
+        echo "❌ Contributors validation failed!"
+        echo "Please fix the contributor data and try again."
+        echo "Run 'node validate-contributors.js --quick' to see details."
+        exit 1
+    fi
+fi
+
+# Check if neither file was modified
+if ! git diff --cached --name-only | grep -q -E "(links|contributors)\.json"; then
+    echo "📄 No data files modified, skipping validation."
+fi
+
+echo "🚀 Pre-commit checks passed!"

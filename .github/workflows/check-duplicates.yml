@@ -1,0 +1,56 @@
+name: Check Duplicates
+
+on:
+  pull_request:
+    branches: [production]
+    paths:
+      - "links.json"
+
+jobs:
+  check-duplicates:
+    runs-on: ubuntu-latest
+    # Only run for the repository owner
+    if: github.actor == 'ArshdeepGrover' || github.repository_owner == 'ArshdeepGrover'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Check for duplicate links
+        run: node validate-links.js --duplicates-only
+
+      - name: Comment on PR if duplicates found
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `❌ **Duplicate Links Detected**
+              
+              Found duplicate titles or URLs in your changes.
+              Check the workflow logs for details.
+              
+              Please remove duplicates and push again.`
+            })
+
+      - name: Comment on PR if no duplicates
+        if: success()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `✅ **No Duplicates Found**
+              
+              All links are unique. Ready for review!`
+            })

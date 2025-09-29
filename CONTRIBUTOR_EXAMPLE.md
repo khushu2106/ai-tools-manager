@@ -11,11 +11,13 @@ When adding yourself to `contributors.json`, use this structure:
   "name": "Your Full Name",
   "github": "your-github-username",
   "avatar": "https://github.com/your-username.png",
+  "linkedin": "your-linkedin-username",
+  "tagline": "Your professional tagline or role",
   "contributions": [
     "Added ChatGPT to AI Writing & Content category",
     "Fixed broken link for Canva AI",
     "Improved mobile responsiveness for tool cards",
-    "Added new AI Video category with 3 tools"
+    "Added new AI Local Models category with 6 tools"
   ],
   "website": "https://your-website.com",
   "role": "Contributor"
@@ -33,6 +35,8 @@ When adding yourself to `contributors.json`, use this structure:
 
 ### Optional Fields
 
+- **`linkedin`**: Your LinkedIn username (without the full URL)
+- **`tagline`**: A brief professional tagline or description
 - **`website`**: Your personal website or portfolio URL
 - **`role`**: Your role in the project (defaults to "Contributor")
 
@@ -132,15 +136,17 @@ Here's a complete example of how Arshdeep Singh's profile is structured:
   "name": "Arshdeep Singh",
   "github": "ArshdeepGrover",
   "avatar": "https://www.arshdeepsingh.info/images/arshdeep-singh.png",
+  "linkedin": "ArshdeepGrover",
+  "tagline": "AI Tools Curator",
   "contributions": [
     "Created the initial AI Tools Collection project",
-    "Curated 28+ professional AI tools across 6 categories",
-    "Designed the modern website interface with Tailwind CSS",
+    "Curated 100+ professional AI tools across 10 categories",
+    "Designed the modern website interface with responsive design",
     "Implemented category filtering and search functionality",
     "Set up open source project structure and documentation",
     "Added comprehensive SEO optimization and social media integration",
     "Created contributor system and community guidelines",
-    "Established GitHub workflows and issue templates"
+    "Established GitHub workflows and validation scripts"
   ],
   "website": "https://arshdeepsingh.info",
   "role": "Creator & Maintainer"
