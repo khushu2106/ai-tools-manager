@@ -1,13 +1,14 @@
 let allCategories = [];
 let currentFilter = "all";
+let searchTerm = ""; // current text search filter
 
 async function loadLinks() {
   try {
     const response = await fetch("links.json");
     const data = await response.json();
     allCategories = data.categories;
-    renderCategoryFilters(allCategories);
-    renderLinks(allCategories);
+  renderCategoryFilters(allCategories); // populate dropdown
+  applyFilters(); // initial render using combined filters
     updateStats(allCategories);
   } catch (error) {
     console.error("Error loading links:", error);
@@ -28,34 +29,45 @@ async function loadContributors() {
 }
 
 function renderCategoryFilters(categories) {
-  const filtersContainer = document.getElementById("category-filters");
+  const select = document.getElementById("category-select");
+  if (!select) return;
+  const total = categories.reduce((sum, cat) => sum + cat.links.length, 0);
+  select.innerHTML = `<option value="all">🎯 All Categories (${total})</option>` +
+    categories
+      .map(
+        (category) => `<option value="${category.name}">${category.icon} ${category.name} (${category.links.length})</option>`
+      )
+      .join("");
+}
 
-  // Add "All" filter button
-  const allButton = `
-    <button class="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center space-x-2 active-filter" onclick="filterByCategory('all')" data-category="all">
-      <span>🎯</span>
-      <span>All Categories</span>
-      <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">${categories.reduce(
-        (sum, cat) => sum + cat.links.length,
-        0
-      )}</span>
-    </button>
-  `;
+// New unified filtering applying category + search term
+function applyFilters() {
+  let categoriesToUse = allCategories;
+  if (currentFilter !== "all") {
+    categoriesToUse = allCategories.filter((c) => c.name === currentFilter);
+  }
 
-  // Add individual category filter buttons
-  const categoryButtons = categories
-    .map(
-      (category) => `
-    <button class="bg-white text-gray-700 border border-gray-300 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 hover:border-blue-300 transition-colors flex items-center space-x-2" onclick="filterByCategory('${category.name}')" data-category="${category.name}">
-      <span>${category.icon}</span>
-      <span>${category.name}</span>
-      <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-xs">${category.links.length}</span>
-    </button>
-  `
-    )
-    .join("");
+  const term = searchTerm.trim().toLowerCase();
+  let filtered = categoriesToUse.map((cat) => {
+    if (!term) return cat; // no search filtering
+    const filteredLinks = cat.links.filter(
+      (link) =>
+        link.title.toLowerCase().includes(term) ||
+        (link.description && link.description.toLowerCase().includes(term))
+    );
+    return { ...cat, links: filteredLinks };
+  });
 
-  filtersContainer.innerHTML = allButton + categoryButtons;
+  // Remove categories that have zero links after search filtering
+  filtered = filtered.filter((cat) => cat.links && cat.links.length > 0);
+
+  const mainContent = document.getElementById("main-content");
+  mainContent.innerHTML = "";
+  if (filtered.length === 0) {
+    mainContent.innerHTML = `<p class="text-center text-gray-500">No tools found matching your criteria.</p>`;
+    return;
+  }
+  renderLinks(filtered);
 }
 
 function filterByCategory(categoryName) {
@@ -278,6 +290,23 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // Set up search + category listeners
+  const searchInput = document.getElementById("tool-search");
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      searchTerm = e.target.value;
+      applyFilters();
+    });
+  }
+  const categorySelect = document.getElementById("category-select");
+  if (categorySelect) {
+    categorySelect.addEventListener("change", (e) => {
+      currentFilter = e.target.value;
+      applyFilters();
+      trackCategoryFilter(currentFilter);
+    });
+  }
 
   // Load content
   loadLinks();

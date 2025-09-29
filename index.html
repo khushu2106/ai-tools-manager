@@ -310,6 +310,31 @@
 
       <div id="category-filters" class="flex flex-wrap justify-center gap-3">
         <!-- Category filter buttons will be loaded here -->
+        <!-- Search + Category Filter (replaces buttons) -->
+        <div class="max-w-3xl mx-auto">
+          <div class="flex flex-col md:flex-row gap-4 items-stretch">
+            <!-- Search Bar -->
+            <div class="flex-1">
+              <label for="tool-search" class="sr-only">Search AI tools</label>
+              <input
+                id="tool-search"
+                type="text"
+                placeholder="Search AI tools (title or description)..."
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white shadow-sm"
+              />
+            </div>
+            <!-- Category Select -->
+            <div class="w-full md:w-72">
+              <label for="category-select" class="sr-only">Filter by category</label>
+              <select
+                id="category-select"
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white shadow-sm"
+              >
+                <option value="all">Loading categories...</option>
+              </select>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

@@ -43,7 +43,12 @@
           "title": "Elicit",
           "url": "https://elicit.com/",
           "description": "AI-powered research assistant"
-        }      
+        },
+        {
+          "title": "www.copy.ai",
+          "url": "https://www.copy.ai/tools",
+          "description": "Free AI Writing Generators"
+        }
       ]
     },
     {
@@ -90,16 +95,16 @@
           "url": "https://stablediffusionweb.com/",
           "description": "Web-based Stable Diffusion interface for photorealistic text-to-image generation"
         },
-{
+        {
           "title": "Nanobanana.ai",
           "url": "https://nanobanana.ai/",
           "description": "Transform any image with simple text prompts"
         },
-      {
-        "title": "Pixlr",
+        {
+          "title": "Pixlr",
           "url": "https://pixlr.com/",
           "description": "Edit photos, generate images, and design freely with Pixlr’s powerful AI tools."
-      }
+        }
       ]
     },
     {
@@ -171,6 +176,16 @@
           "title": "Blackbox",
           "url": "https://blackbox.ai/",
           "description": "Free code search & snippet extraction"
+        },
+        {
+          "title": "CodiumAI",
+          "url": "https://codium.ai/",
+          "description": "AI-powered code review and test generation"
+        },
+        {
+          "title": "V0 by Vercel",
+          "url": "https://v0.dev/",
+          "description": "Build full-stack apps with AI assistance"
         }
       ]
     },
@@ -212,6 +227,11 @@
           "title": "Leonardo AI",
           "url": "https://leonardo.ai/",
           "description": "AI art and image generation platform"
+        },
+        {
+          "title": "Vmaker AI/",
+          "url": "https://www.vmaker.com/",
+          "description": "The fastest way to generate videos from text, voice, or documents and edit them to perfection with AI."
         }
       ]
     },
@@ -291,6 +311,40 @@
       "title": "Feedback & Rating system",
       "url":"",
       "description":"Star rating with user feedback option"
+      {,
+      {
+      "name": "AI Local Models",
+      "icon": "🖥️",
+      "links": [
+        {
+          "title": "GPT4All",
+          "url": "https://gpt4all.io/",
+          "description": "Run open-source LLMs locally on your computer"
+        },
+        {
+          "title": "Ollama",
+          "url": "https://ollama.ai/",
+          "description": "Simple way to run and manage LLMs locally"
+        },
+        {
+          "title": "LM Studio",
+          "url": "https://lmstudio.ai/",
+          "description": "Desktop app to run and chat with local models"
+        },
+        {
+          "title": "Llama.cpp",
+          "url": "https://github.com/ggerganov/llama.cpp",
+          "description": "Local inference of LLaMA models on CPU/GPU"
+        },
+        {
+          "title": "AnythingLLM",
+          "url": "https://anythingllm.com/",
+          "description": "Toolkit to run and connect many local LLMs"
+        },
+        {
+          "title": "Jan",
+          "url": "https://jan.ai/",
+          "description": "Open-source local ChatGPT alternative"
         }
       ]
     }
