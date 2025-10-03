@@ -8,13 +8,14 @@
       "tagline": "AI Tools Curator",
       "contributions": [
         "Created the initial AI Tools Collection project",
-        "Curated 28+ professional AI tools across 6 categories",
-        "Designed the modern website interface with Tailwind CSS",
+        "Designed the modern website interface with responsive design",
         "Implemented category filtering and search functionality",
         "Set up open source project structure and documentation",
         "Added comprehensive SEO optimization and social media integration",
         "Created contributor system and community guidelines",
-        "Established GitHub workflows and issue templates"
+        "Established GitHub workflows and issue templates",
+        "Enhanced GitHub integration with live stats display",
+        "Added comprehensive issue template collection"
       ],
       "website": "https://arshdeepsingh.info",
       "role": "Creator & Maintainer"
@@ -57,12 +58,17 @@
     {
       "name": "Dipanshu Rawat",
       "github": "dipanshurdev",
-      "avatar": "https://media.licdn.com/dms/image/v2/D4E03AQHhNFVZVuxgbw/profile-displayphoto-shrink_100_100/B4EZS86LOWHoAU-/0/1738336155295?e=1759363200&v=beta&t=SVcFQrHVYCaSDRVIAvuJhZQudKRUy6omy7H4v7ddLqk",
+      "avatar": "https://github.com/dipanshurdev.png",
       "linkedin": "dipanshurdev",
       "website": "https://dipanshurdev.netlify.app",
       "tagline": "I write code",
       "contributions": [
         "Added new AI Tool 'Banani.co' for Designers"
+        "Added Banani.co AI design tool for designers",
+        "Added Bolt.new AI development tool",
+        "Added Pixlr and NanoBanana.ai to AI Design & Images",
+        "Added Copy.ai AI writing generator tool",
+        "Added Vmaker AI video generation tool"
       ],
       "role": "Contributor"
     },
@@ -91,6 +97,99 @@
           "Added signUp and login "
         ],
         "role" : "Contributor"
+    }, 
+      "name": "B Sai Mahendra",
+      "github": "saimahendra282",
+      "avatar": "https://avatars.githubusercontent.com/u/118994059?v=4",
+      "linkedin": "bejawada-sai-mahendra-b18289212",
+      "tagline": "Studying dual degree at klef",
+      "contributions": [
+        "Added searching and filtering functionality",
+        "Implemented dark/light mode toggle button in header",
+        "Added theme palette dropdown feature",
+        "Completed dark mode toggle enhancement",
+        "Added comprehensive theming system to the website"
+      ],
+      "website": "https://bejawadasaimahendra.vercel.app",
+      "role": "Contributor"
+    },
+    {
+      "name": "Siddarthan N",
+      "github": "Siddarthan999",
+      "avatar": "https://avatars.githubusercontent.com/u/91734840?v=4",
+      "linkedin": "siddarthan-n-118635224",
+      "tagline": "Software Engineer",
+      "contributions": [
+        "Added CodiumAI and V0 by Vercel under AI Coding & Development"
+      ],
+      "role": "Contributor"
+    },
+    {
+      "name": "Manjunath L",
+      "github": "Manjunath-L",
+      "avatar": "https://github.com/Manjunath-L.png",
+      "linkedin": "manjunath-l-web",
+      "tagline": "Aspiring Software Engineer & Open Source Contributor",
+      "contributions": [
+        "Created new AI Local Models category with 6 tools",
+        "Added GPT4All, Ollama, LM Studio, Llama.cpp, AnythingLLM, and Jan"
+      ],
+      "role": "Contributor"
+    },
+    {
+      "name": "Fleming John",
+      "github": "FlemingJohn",
+      "avatar": "https://github.com/FlemingJohn.png",
+      "linkedin": "fleming-john-0b4ab3263",
+      "tagline": "Software Engineer",
+      "contributions": [
+        "Added comprehensive validation script for the project",
+        "Contributed multiple AI tools to the collection",
+        "Fixed various bugs and resolved errors in the codebase",
+        "Enhanced project reliability with validation systems"
+      ],
+      "role": "Contributor"
+    },
+    {
+      "name": "Simranpreet Kaur",
+      "github": "ksimran-935",
+      "avatar": "https://github.com/ksimran-935.png",
+      "linkedin": "simranpreet-kaur-a713552aa",
+      "tagline": "Learning and Growing",
+      "contributions": [
+        "Added Perplexity AI to AI Productivity category",
+        "Added Deepseek under AI Coding and Development"
+      ],
+      "role": "Contributor"
+    },
+    {
+      "name": "Sidra Jahangir",
+      "github": "Itz-Sidra",
+      "avatar": "https://avatars.githubusercontent.com/u/182225159?v=4",
+      "linkedin": "sidra-jahangir-6a3887320",
+      "tagline": "Learn. Build. Conquer.",
+      "contributions": [
+        "Fixed documentation issues and improved project structure",
+        "Added Rytr under AI Writing & Content category",
+        "Added Aider under AI Coding & Development",
+        "Added Kapwing under AI Video & Audio editing",
+        "Added Hugging Face Spaces under AI Model Prototyping",
+        "Added ChatPDF under AI Productivity category"
+      ],
+      "role": "Contributor"
+    },
+    {
+      "name": "Sejal",
+      "github": "Sejal-collection",
+      "avatar": "https://github.com/Sejal-collection.png",
+      "linkedin": "sejal-kamble-567261291",
+      "tagline": "Design. Develop. Empower.",
+      "contributions": [
+        "Automated contributor onboarding with GitHub Actions and PR checklist bots",
+        "Added a scroll to the top button to reach the top of the page easily"
+      ],
+     "role": "Contributor"
     }
+
   ]
 }

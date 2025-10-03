@@ -74,16 +74,27 @@ Thank you for your interest in contributing to the AI Tools Collection! This doc
    }
    ```
 
-6. **Test Your Changes**
+6. **Validate Your Changes**
+
+   ```bash
+   # Check for duplicates
+   npm run check-duplicates
+   
+   # Validate all data
+   npm run validate
+   ```
+
+7. **Test Your Changes**
    - Open `index.html` in browser
    - Verify tool appears correctly
    - Check link functionality
+   - Test search and filter features
 
-7. **Commit & Push**
+8. **Commit & Push**
 
    ```bash
    git add .
-   git commit -m "feat(ai tool): Add [Tool Name] to [Category] category"
+   git commit -m "feat(tools): add [Tool Name] to [Category] category"
    git push origin add-new-tool-name
    ```
 
@@ -112,25 +123,42 @@ Thank you for your interest in contributing to the AI Tools Collection! This doc
 ## 📂 File Structure Guide
 
 ```
-├── index.html          # Main page structure
-├── style.css           # All styling and animations
-├── script.js           # JavaScript functionality
-├── links.json          # AI tools database
-├── contributors.json   # Contributors information
-├── README.md           # Main documentation
-└── CONTRIBUTING.md     # This file
+├── index.html              # Main page structure
+├── style.css               # All styling and animations
+├── script.js               # JavaScript functionality
+├── links.json              # AI tools database
+├── contributors.json       # Contributors information
+├── manifest.json           # PWA manifest
+├── package.json            # Project configuration
+├── README.md               # Main documentation
+├── CONTRIBUTING.md         # This file
+├── COMMIT_GUIDELINES.md    # Commit message standards
+├── CONTRIBUTOR_EXAMPLE.md  # Contributor profile template
+├── validate-links.js       # Link validation script
+├── validate-contributors.js # Contributor validation script
+├── check-duplicates.js     # Duplicate detection script
+├── assets/                 # Project assets
+│   ├── favicon.svg         # Site favicon
+│   ├── og-image.svg        # Social media image
+│   └── README.md           # Assets documentation
+├── src/                    # Source files (future modular structure)
+└── tests/                  # Test files
 ```
 
 ## 🏷️ Categories
 
 Current categories and their criteria:
 
-- **AI Writing & Content** ✍️: Writing, editing, content creation
-- **AI Design & Images** 🎨: Image generation, design tools, visual content
-- **AI Presentations** 📊: Presentation creation, slide design
-- **AI Coding & Development** 💻: Code assistance, development tools
-- **AI Video & Audio** 🎬: Video editing, audio processing, multimedia
-- **AI Productivity** ⚡: Productivity tools, automation, research
+- **AI Writing & Content** ✍️: Writing, editing, content creation, research assistance
+- **AI Design & Images** 🎨: Image generation, design tools, visual content creation
+- **AI Presentations** 📊: Presentation creation, slide design, storytelling tools
+- **AI Coding & Development** 💻: Code assistance, development environments, programming tools
+- **AI Video & Audio** 🎬: Video editing, audio processing, multimedia creation
+- **AI Productivity** ⚡: Productivity tools, automation, workflow optimization
+- **AI Entertainment** 😂: Fun applications, memes, games, creative entertainment
+- **AI Model Prototyping** 🧪: Model development, testing, experimentation platforms
+- **AI Game & Strategy** 🎮: Gaming applications, strategic AI tools, interactive experiences
+- **AI Local Models** 🖥️: Tools for running and managing AI models locally
 
 ### Adding New Categories
 
@@ -152,11 +180,29 @@ If none of the existing categories fit:
 
 ## 🔍 Review Process
 
-1. **Automated Checks**: Basic validation of JSON format and links
-2. **Manual Review**: Maintainers check tool quality and relevance
-3. **Testing**: Tools are tested for functionality
-4. **Feedback**: You may receive requests for changes
-5. **Merge**: Approved contributions are merged
+1. **Automated Validation**:
+   - JSON format validation
+   - Link accessibility checks
+   - Duplicate detection
+   - Data structure verification
+
+2. **Manual Review**:
+   - Maintainers check tool quality and relevance
+   - Verify free tier availability
+   - Assess tool usefulness and accuracy
+
+3. **Testing**:
+   - Tools are tested for functionality
+   - Mobile responsiveness checked
+   - Search and filter features validated
+
+4. **Feedback**:
+   - You may receive requests for changes
+   - Constructive feedback provided for improvements
+
+5. **Merge**:
+   - Approved contributions are merged
+   - Contributors are recognized in the project
 
 ## 🏆 Recognition
 

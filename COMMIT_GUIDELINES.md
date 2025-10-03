@@ -120,11 +120,21 @@ Fixes #23
 ### Adding a new AI tool
 
 ```
-feat(tools): add [Tool Name] for [category]
+feat(tools): add [Tool Name] to [Category] category
 
-- Add [Tool Name] to [category] section
-- Include description, pricing, and key features
-- Update tools count in statistics
+- Add [Tool Name] with comprehensive description
+- Verify free tier availability and functionality
+- Include proper categorization and metadata
+```
+
+### Adding multiple tools
+
+```
+feat(tools): add 5 new AI coding tools
+
+- Add GitHub Copilot, Replit AI, Tabnine, Cursor, and Aider
+- All tools verified for free tier availability
+- Enhance AI Coding & Development category coverage
 ```
 
 ### Fixing a bug
@@ -155,6 +165,26 @@ perf(ui): optimize tool card rendering
 - Implement lazy loading for tool images
 - Reduce DOM queries in filter function
 - Improve page load time by ~200ms
+```
+
+### Adding new features
+
+```
+feat(search): implement advanced search functionality
+
+- Add real-time search across tool names and descriptions
+- Include category-based filtering
+- Enhance user experience with instant results
+```
+
+### Adding new categories
+
+```
+feat(categories): add AI Local Models category
+
+- Create new category for local AI model tools
+- Add 6 initial tools: GPT4All, Ollama, LM Studio, etc.
+- Update navigation and filtering logic
 ```
 
 ## Automated Checks

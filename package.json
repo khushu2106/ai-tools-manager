@@ -1,0 +1,11 @@
+{
+  "name": "ai-tools-hub",
+  "version": "1.0.0",
+  "description": "AI Tools Directory",
+  "scripts": {
+    "check-duplicates": "node validate-links.js --duplicates-only",
+    "validate": "node validate-links.js"
+  },
+  "author": "Arshdeep Singh",
+  "license": "MIT"
+}
