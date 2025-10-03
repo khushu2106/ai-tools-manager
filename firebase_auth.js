@@ -1,6 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
 import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup ,sendPasswordResetEmail ,signOut} from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail, signInWithRedirect,
+    getRedirectResult, 
+    signOut  } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAZBpDk0m_QmzMgBefSemJLt6j3959uxK0",
@@ -92,7 +94,7 @@ if (authForm) {
     else if (action === 'Login') {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
-
+ 
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           showMessage('Login successful. Redirecting...', 'signUpMessage');
@@ -117,74 +119,74 @@ if (authForm) {
 const googleButton = document.getElementById('google-sign-in');
 
 if (googleButton) {
-    googleButton.addEventListener('click', handleGoogleSignIn);
+  googleButton.addEventListener('click', handleGoogleSignIn);
 }
 
 function handleGoogleSignIn() {
-    const provider = new GoogleAuthProvider();
+  const provider = new GoogleAuthProvider();
 
-    signInWithPopup(auth, provider)
-        .then((result) => {
-            const user = result.user;
-            const docRef = doc(db, "users", user.uid);
-            const userData = {
-                email: user.email,
-                name: user.displayName || 'Google User',
-            };
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      const user = result.user;
+      const docRef = doc(db, "users", user.uid);
+      const userData = {
+        email: user.email,
+        name: user.displayName || 'Google User',
+      };
 
-            setDoc(docRef, userData, { merge: true })
-                .then(() => {
-                    showMessage('Signed in with Google. Redirecting...', 'signUpMessage');
-                    window.location.href = "index.html";
-                })
-                .catch((error) => {
-                    console.error("Error saving Google user data:", error);
-                    showMessage('Google sign-in successful, but database save failed.', 'signUpMessage');
-                });
+      setDoc(docRef, userData, { merge: true })
+        .then(() => {
+          showMessage('Signed in with Google. Redirecting...', 'signUpMessage');
+            window.location.href = "index.html";
         })
         .catch((error) => {
-            const errorCode = error.code;
-            let errorMessage = `Google Sign-in failed: ${error.message}`;
-            if (errorCode === 'auth/popup-closed-by-user') {
-                errorMessage = 'Google Sign-in was cancelled.';
-            }
-
-            showMessage(errorMessage, 'signUpMessage');
-            console.error("Google Sign-in Error:", error);
+          console.error("Error saving Google user data:", error);
+          showMessage('Google sign-in successful, but database save failed.', 'signUpMessage');
         });
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      let errorMessage = `Google Sign-in failed: ${error.message}`;
+      if (errorCode === 'auth/popup-closed-by-user') {
+        errorMessage = 'Google Sign-in was cancelled.';
+      }
+
+      showMessage(errorMessage, 'signUpMessage');
+      console.error("Google Sign-in Error:", error);
+    });
 }
 
 const forgetPasswordLink = document.getElementById('forgot-password-link');
 
 if (forgetPasswordLink) {
-    forgetPasswordLink.addEventListener('click', handlePasswordReset);
+  forgetPasswordLink.addEventListener('click', handlePasswordReset);
 }
 
 function handlePasswordReset(event) {
-    event.preventDefault(); // Stop the link from navigating
+  event.preventDefault(); // Stop the link from navigating
 
-    const emailInput = document.getElementById("email");
-    const email = emailInput ? emailInput.value : '';
+  const emailInput = document.getElementById("email");
+  const email = emailInput ? emailInput.value : '';
 
-    if (!email) {
-        showMessage('Please enter your email address in the email field above.', 'signUpMessage');
-        return;
-    }
+  if (!email) {
+    showMessage('Please enter your email address in the email field above.', 'signUpMessage');
+    return;
+  }
 
-    sendPasswordResetEmail(auth, email)
-        .then(() => {
-            // Password reset email sent!
-            showMessage(`Password reset link sent to ${email}. Check your inbox.`, 'signUpMessage');
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            let errorMessage = `Could not send reset email: ${error.message}`;
+  sendPasswordResetEmail(auth, email)
+    .then(() => {
+      // Password reset email sent!
+      showMessage(`Password reset link sent to ${email}. Check your inbox.`, 'signUpMessage');
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      let errorMessage = `Could not send reset email: ${error.message}`;
 
-            if (errorCode === 'auth/user-not-found') {
-                errorMessage = 'If an account exists for that email, a password reset link has been sent.';
-            }
-            
-            showMessage(errorMessage, 'signUpMessage');
-            console.error("Password Reset Error:", error);
-        });
+      if (errorCode === 'auth/user-not-found') {
+        errorMessage = 'If an account exists for that email, a password reset link has been sent.';
+      }
+
+      showMessage(errorMessage, 'signUpMessage');
+      console.error("Password Reset Error:", error);
+    });
 }

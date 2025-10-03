@@ -57,7 +57,7 @@
                 </div>
             </div>
 
-            <div class="text-sm mt-4 text-right" id="forgot-password-link"  style="display:none;">
+            <div class="text-sm mt-4 text-right" id="forgot-password-link" style="display:none;">
                 <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Forgot your password?</a>
             </div>
 
@@ -83,6 +83,8 @@
         const submitButton = document.querySelector('#auth-form button[type="submit"]');
         const toggleAuthText = document.getElementById('toggle-auth-text');
 
+        const nameInput = document.getElementById('name');
+        const confirmPasswordInput = document.getElementById('confirm-password');
         let isRegisterMode = true; // Start in Register mode
 
         function updateFormState() {
@@ -93,6 +95,8 @@
                 forgotPasswordLink.style.display = 'none';
                 submitButton.textContent = 'Register';
                 toggleAuthText.innerHTML = 'Already have an account? <a href="#" id="toggle-auth-link" class="font-medium text-indigo-600 hover:text-indigo-500">Login</a>';
+                nameInput.setAttribute('required', '');
+                confirmPasswordInput.setAttribute('required', '');
             } else {
                 formTitle.textContent = 'Login';
                 nameField.style.display = 'none';
@@ -100,8 +104,9 @@
                 forgotPasswordLink.style.display = 'block';
                 submitButton.textContent = 'Login';
                 toggleAuthText.innerHTML = 'Don\'t have an account? <a href="#" id="toggle-auth-link" class="font-medium text-indigo-600 hover:text-indigo-500">Sign up</a>';
+                nameInput.removeAttribute('required');
+                confirmPasswordInput.removeAttribute('required');
             }
-            // Re-attach the event listener to the new anchor tag every time the innerHTML is changed
             document.getElementById('toggle-auth-link').addEventListener('click', (e) => {
                 e.preventDefault();
                 isRegisterMode = !isRegisterMode;
